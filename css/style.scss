@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+@mixin m-inner(
+  $mw: 1100px,
+  $w: (
+    390/440,
+  ) * 100%
+) {
+  width: $w;
+  max-width: $mw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin m-flex($a: center, $j: space-between) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $j;
+  align-items: $a;
+}
+
+$breakpoints: (
+  "desktop": "(768px <= width)",
+  "nav": "(843px <= width)",
+  "about": "(1000px <= width)",
+  "scroll-hint": "(1100px <=width)",
+) !default;
+
+@mixin m-query($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/* base
+-----------------------------------------------------------------------------*/
+body {
+  font-size: f-rem(15);
+  font-family: sans-serif;
+  line-height: (30/15);
+
+  @include m-query(desktop) {
+    font-size: f-rem(17);
+    line-height: (34/17);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}

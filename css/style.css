@@ -1,0 +1,20 @@
+/* base
+-----------------------------------------------------------------------------*/
+body {
+  font-size: f-rem(15);
+  font-family: sans-serif;
+  line-height: 2;
+}
+@media (768px <= width) {
+  body {
+    font-size: f-rem(17);
+    line-height: 2;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+/*# sourceMappingURL=style.css.map */
