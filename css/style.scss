@@ -50,3 +50,12 @@ img {
   height: auto;
   vertical-align: bottom;
 }
+
+/* header */
+.header {
+  &__inner {
+    @include m-inner(2000px);
+  }
+}
+
+/* nav */
